@@ -23,7 +23,7 @@ Summary:
 - `TryKillPutin(player, reason)`: Tries to kill the specified player if they are Putin.
 
 
-# DISCAIMER
+# DISCLAIMER
 The Putin Plugin is solely intended as an entertainment product for the game SCP: Secret Laboratory and does not aim to promote, endorse, or spread any form of political or ideological propaganda.
 The plugin has been developed with the sole purpose of providing an enjoyable gaming experience and does not represent a stance or commentary on the current political situation between Russia and Ukraine.
 Please consider the Putin Plugin as a fictional creation within the game's context and refrain from drawing any political or diplomatic conclusions or implications.
