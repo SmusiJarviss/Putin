@@ -11,7 +11,7 @@ public class KGBConfigs
     public float Health { get; set; } = 120;
 
     [Description("The broadcast displayed at the initial spawn.")]
-    public Broadcast SpawnBroadcast { get; set; } = new("<b><size=20><color=red>{player}</color>, you have spawned as a<color=cyan>KGB</color> member.\nProtect Putin!</size></b>", 10);
+    public Broadcast SpawnBroadcast { get; set; } = new("<b><size=20><color=red>{player}</color>, you have spawned as a<color=blue>KGB</color> member.\nProtect Putin!</size></b>", 10);
 
     [Description("The RoleTypeId of the KGB role.")]
     public RoleTypeId Role { get; set; } = RoleTypeId.ClassD;

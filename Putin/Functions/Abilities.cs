@@ -58,7 +58,7 @@ internal class Abilities
     {
         if (isThermoBaricCooldown)
         {
-            player.ShowHint($"You have to wait {Putin.Singleton.Config.PutinConfigs.ThermoBaricCooldown} in order to use the Thermobaric bomb ability.", 5);
+            player.ShowHint($"You have to wait {Putin.Singleton.Config.PutinConfigs.ThermoBaricCooldown}s in order to use the Thermobaric bomb ability.", 5);
             return;
         }
 
@@ -77,7 +77,7 @@ internal class Abilities
     {
         if (isKGBCooldown)
         {
-            player.ShowHint($"You have to wait {Putin.Singleton.Config.PutinConfigs.KGBCooldown} in order to use the KGB ability.", 5);
+            player.ShowHint($"You have to wait {Putin.Singleton.Config.PutinConfigs.KGBCooldown}s in order to use the KGB ability.", 5);
             return;
         }
 
@@ -85,10 +85,12 @@ internal class Abilities
         {
             Player[] players = Player.List.Where(x => x.Role.Type == PlayerRoles.RoleTypeId.Spectator).ToArray();
 
-            if (players.Count() >= i)
+            if (players.Count() == i)
                 break;
 
-            players[i].GameObject.AddComponent<KGBComponent>().Player.Position = player.Position + (Vector3.up * 1.3f);
+            Player finalPlayer = players[i].GameObject.AddComponent<KGBComponent>().Player;
+            finalPlayer.Role.Set(Putin.Singleton.Config.KGBConfigs.Role);
+            finalPlayer.Position = player.Position + Vector3.up * 1.5f;
         }
 
         Timing.RunCoroutine(KGBCooldown());
@@ -97,9 +99,9 @@ internal class Abilities
 
     internal static void NukeAbility(Player player)
     {
-        if (player.Health <= Putin.Singleton.Config.PutinConfigs.NukeMinHealth)
+        if (player.Health > Putin.Singleton.Config.PutinConfigs.NukeMinHealth)
         {
-            player.ShowHint("You have to wait until you have 1HP in order to use the Nuke ability.", 5);
+            player.ShowHint($"You have to wait until you have {Putin.Singleton.Config.PutinConfigs.NukeMinHealth} in order to use the Nuke ability.", 5);
             return;
         }
 

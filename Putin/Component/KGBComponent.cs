@@ -15,7 +15,6 @@ public class KGBComponent : MonoBehaviour
 
     private void Start()
     {
-        Player.Role.Set(Putin.Singleton.Config.KGBConfigs.Role);
         Player.Health = Player.MaxHealth = Putin.Singleton.Config.KGBConfigs.Health;
         Player.Broadcast(Putin.Singleton.Config.KGBConfigs.SpawnBroadcast.Duration, Putin.Singleton.Config.KGBConfigs.SpawnBroadcast.Content.Replace("{player}", Player.Nickname));
 

@@ -9,7 +9,7 @@ public class Putin : Plugin<MainConfig>
 
     public override string Author => "Smusi Jarvis";
 
-    public override Version Version => new(1, 0, 0);
+    public override Version Version => new(1, 0, 1);
 
     public override Version RequiredExiledVersion => new(7, 2, 0);
 
