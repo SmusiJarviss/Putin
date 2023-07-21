@@ -7,6 +7,9 @@ using System.ComponentModel;
 
 public class PutinConfigs
 {
+    [Description("Putin spawn chance.")]
+    public float SpawnChance { get; set; } = 60f;
+
     [Description("Putin role starting health.")]
     public float Health { get; set; } = 1000;
 

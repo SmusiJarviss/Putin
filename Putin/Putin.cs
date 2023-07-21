@@ -9,7 +9,7 @@ public class Putin : Plugin<MainConfig>
 
     public override string Author => "Smusi Jarvis";
 
-    public override Version Version => new(1, 0, 1);
+    public override Version Version => new(1, 0, 2);
 
     public override Version RequiredExiledVersion => new(7, 2, 0);
 
@@ -36,11 +36,13 @@ public class Putin : Plugin<MainConfig>
     {
         ServerHandlers = new();
         Exiled.Events.Handlers.Server.RoundStarted += ServerHandlers.RoundStarted;
+        Exiled.Events.Handlers.Server.EndingRound += ServerHandlers.OnEndingRound;
     }
 
     private void UnSubscribeEvents()
     {
         Exiled.Events.Handlers.Server.RoundStarted -= ServerHandlers.RoundStarted;
+        Exiled.Events.Handlers.Server.EndingRound -= ServerHandlers.OnEndingRound;
 
         ServerHandlers = null;
         Singleton = null;
